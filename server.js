@@ -6,10 +6,11 @@ const mongoose = require('mongoose');
 const app = express();
 const PORT = 3000;
 
-// MongoDB 연결 설정
-mongoose.connect('mongodb://localhost:27017/mydatabase', { useNewUrlParser: true, useUnifiedTopology: true })
+// MongoDB 연결 설정 (환경 변수 사용)
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.log(err));
+
 
 // Schema 및 Model 정의
 const textSchema = new mongoose.Schema({
