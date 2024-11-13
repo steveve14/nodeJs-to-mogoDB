@@ -7,10 +7,9 @@ const app = express();
 const PORT = 3000;
 
 // MongoDB 연결 설정 (환경 변수 사용)
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('몽고디비 api 코드 입력 부분')
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.log(err));
-
 
 // Schema 및 Model 정의
 const textSchema = new mongoose.Schema({
